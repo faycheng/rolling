@@ -1,4 +1,4 @@
-package metric
+package rolling
 
 import (
 	"fmt"
@@ -26,7 +26,7 @@ func NewCounter(opts CounterOpts) Counter {
 
 func (c *counter) Add(val int64) {
 	if val < 0 {
-		panic(fmt.Errorf("stat/metric: cannot decrease in negative value. val: %d", val))
+		panic(fmt.Errorf("rolling: cannot decrease in negative value. val: %d", val))
 	}
 	atomic.AddInt64(&c.val, val)
 }

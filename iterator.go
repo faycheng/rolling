@@ -1,4 +1,4 @@
-package metric
+package rolling
 
 import "fmt"
 
@@ -17,7 +17,7 @@ func (i *Iterator) Next() bool {
 // Bucket gets current bucket.
 func (i *Iterator) Bucket() Bucket {
 	if !(i.Next()) {
-		panic(fmt.Errorf("stat/metric: iteration out of range iteratedCount: %d count: %d", i.iteratedCount, i.count))
+		panic(fmt.Errorf("rolling: iteration out of range iteratedCount: %d count: %d", i.iteratedCount, i.count))
 	}
 	bucket := *i.cur
 	i.iteratedCount++

@@ -1,4 +1,4 @@
-package metric
+package rolling
 
 import (
 	"fmt"
@@ -38,7 +38,7 @@ func NewRollingCounter(opts RollingCounterOpts) RollingCounter {
 
 func (r *rollingCounter) Add(val int64) {
 	if val < 0 {
-		panic(fmt.Errorf("stat/metric: cannot decrease in value. val: %d", val))
+		panic(fmt.Errorf("rolling: cannot decrease in value. val: %d", val))
 	}
 	r.policy.Add(float64(val))
 }

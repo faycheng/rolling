@@ -1,4 +1,4 @@
-package metric
+package rolling
 
 // Bucket contains multiple float64 points.
 type Bucket struct {

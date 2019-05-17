@@ -1,4 +1,4 @@
-package metric
+package rolling
 
 // Opts contains the common arguments for creating Metric.
 type Opts struct {

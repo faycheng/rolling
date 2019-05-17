@@ -1,4 +1,4 @@
-package metric
+package rolling
 
 import (
 	"github.com/stretchr/testify/assert"

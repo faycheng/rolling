@@ -1,4 +1,4 @@
-package metric
+package rolling
 
 var _ Metric = &pointGauge{}
 var _ Aggregation = &pointGauge{}
